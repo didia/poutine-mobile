@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +16,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ymu-A1-uFQ">
+                                <rect key="frame" x="20" y="114" width="560" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vous détestez ne rien faire? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQj-go-IKB">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Découvrez des activités près de vous et qui vous intéressent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cao-bR-vuI">
+                                        <rect key="frame" x="0.0" y="31" width="560" height="18"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q2P-gF-zxm">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="WDo-E9-6Z4"/>
+                                    <constraint firstAttribute="width" constant="100" id="lCa-Ue-jRa"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nnu-JI-3ut">
+                                <rect key="frame" x="20" y="372" width="560" height="15"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ymu-A1-uFQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2M2-I9-rnr"/>
+                            <constraint firstItem="Nnu-JI-3ut" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4fz-5o-SH6"/>
+                            <constraint firstItem="Nnu-JI-3ut" firstAttribute="top" secondItem="q2P-gF-zxm" secondAttribute="bottom" constant="22" id="C3m-Cm-l4N"/>
+                            <constraint firstItem="Ymu-A1-uFQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="CMK-sq-xIb"/>
+                            <constraint firstItem="Ymu-A1-uFQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="94" id="XCc-4F-7nT"/>
+                            <constraint firstItem="Nnu-JI-3ut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YQD-PM-ZTr"/>
+                            <constraint firstItem="q2P-gF-zxm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fBq-wK-xZM"/>
+                            <constraint firstItem="q2P-gF-zxm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vZ2-aa-C7H"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="afterLoginMessage" destination="Nnu-JI-3ut" id="YFk-Fu-UDN"/>
+                        <outlet property="introMessage" destination="Ymu-A1-uFQ" id="ANu-m6-ujv"/>
+                        <outlet property="userImage" destination="q2P-gF-zxm" id="zni-fu-0Zt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="350"/>
+            <point key="canvasLocation" x="192" y="380"/>
         </scene>
     </scenes>
 </document>
